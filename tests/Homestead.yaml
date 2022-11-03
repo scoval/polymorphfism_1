@@ -1,0 +1,48 @@
+---
+ip: "23.106.56.19"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/Desktop/hillel
+      to: /home/vagrant/hillel
+
+sites:
+    - map: one.hillel
+      to: /home/vagrant/hillel/one.hillel
+      php: "5.6"
+    - map: two.hillel
+      to: /home/vagrant/hillel/abracadabra
+
+databases:
+    - homestead
+    - one_hillel
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+
+#services:
+#    - enabled:
+#         - "postgresql@12-main"
+#    - disabled:
+#         - "postgresql@11-main"
+
+#ports:
+#    - send: 33060 
+#      to: 3306
+#    - send: 4040
+#      to: 4040
+#      to: 5432
+#    - send: 8025 # Mailhog
+#      to: 8025
+#    - send: 9600
+#      to: 9600
+#    - send: 27017
+#      to: 27017
